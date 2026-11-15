@@ -13,6 +13,8 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
+# 测试目录
+tests/
 # PyCharm 本地设置
 .idea/
 
