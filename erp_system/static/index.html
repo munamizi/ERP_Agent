@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>凌云电脑制造 ERP</title><link rel="stylesheet" href="/static/styles.css"></head>
+<body>
+<header><div><h1>凌云电脑制造 ERP</h1><p>从销售需求到生产交付</p></div><form id="session-form"><label>API 令牌<input id="token" type="password" autocomplete="off" aria-label="API 令牌"></label><button type="submit">连接</button><span id="role"></span></form></header>
+<div class="layout"><nav aria-label="业务模块">
+<button data-view="sales">销售订单与 BOM</button><button data-view="inventory">物料与库存</button><button data-view="purchase">采购管理</button><button data-view="production">生产与交付</button><button data-view="finance">基础财务</button>
+<a href="/docs" target="_blank" rel="noopener">HTTP API 文档</a><a href="http://192.168.100.1:8080/" target="_blank" rel="noopener">供应商报价站</a>
+</nav><main><div class="toolbar"><h2 id="view-title">销售订单与 BOM</h2><button id="refresh">刷新数据</button></div><p id="message" role="status" aria-live="polite"></p><div id="content"></div></main></div>
+<dialog id="action-dialog"><div id="dialog-content"></div><button id="close-dialog">关闭</button></dialog>
+<footer>本地模拟 ERP · 人民币金额均不含税。</footer>
+<script type="module" src="/static/app.js"></script>
+</body></html>

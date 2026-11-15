@@ -1,0 +1,17 @@
+{
+  "dependencies": [".."],
+  "graphs": {
+    "erp_agent": "src.agent.main_agent:deep_agent"
+  },
+  "env": "./.env",
+  "http": {
+    "app": "src.backend.api.studio_app:app",
+    "cors": {
+      "allow_origins": ["https://smith.langchain.com"],
+      "allow_credentials": true,
+      "allow_methods": ["*"],
+      "allow_headers": ["*"],
+      "expose_headers": ["x-pagination-total", "x-pagination-next", "content-location"]
+    }
+  }
+}

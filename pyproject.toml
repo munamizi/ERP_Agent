@@ -1,0 +1,42 @@
+[project]
+name = "erp-agent"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "sqlalchemy",
+    "uvicorn",
+    "pydantic",
+    "langgraph>=1.2.15",
+]
+
+[project.optional-dependencies]
+agent = [
+    "deepagents",
+    "langchain-openai",
+    "langchain-mcp-adapters",
+    "mcp",
+    "httpx",
+    "pyyaml",
+    "beautifulsoup4",
+    "markdownify",
+    "plotly",
+    "langgraph-checkpoint-mongodb",
+    "langgraph-store-mongodb",
+    "opensandbox",
+    "python-dotenv>=1.2.4",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "httpx2",
+    "beautifulsoup4",
+    "langgraph-cli[inmem]>=0.4.35",
+    "langgraph-api>=0.16.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+cache_dir = ".venv/.pytest_cache"

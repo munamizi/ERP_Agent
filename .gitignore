@@ -1,0 +1,27 @@
+# 本地环境变量和密钥，保留可提交的配置模板
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Python 虚拟环境和缓存
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# PyCharm 本地设置
+.idea/
+
+# 应用运行状态和本地数据库
+.runtime/
+.langgraph_api/
+/erp_system/data/*.sqlite
+/erp_system/data/*.sqlite-*
+/erp_system/data/backups/
+
+# 个人面试资料
+/output/interview/

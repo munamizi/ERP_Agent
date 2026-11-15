@@ -1,0 +1,24 @@
+:root { font-family:system-ui,"Microsoft YaHei",sans-serif; color:#27364b; background:#f4f6f8; }
+* { box-sizing:border-box; }
+body { margin:0; font-size:14px; line-height:1.6; }
+header { background:#223c57; color:#fff; padding:20px 28px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; }
+h1 { margin:0; font-size:24px; } header p { margin:4px 0; }
+header form { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
+.layout { display:flex; min-height:75vh; } nav { width:200px; flex-shrink:0; padding:18px; border-right:1px solid #dbe2ea; background:white; }
+nav button,nav a { display:block; width:100%; padding:12px; margin-bottom:8px; text-align:left; }
+nav .active { background:#eaf2fc; border-color:#7c9fc5; }
+main { min-width:0; padding:24px; flex:1; }
+.toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+section { margin:18px 0; padding:20px; background:white; border:1px solid #dce3ea; }
+h2,h3 { margin:0 0 14px; } .table-wrap { overflow:auto; }
+table { border-collapse:collapse; width:100%; text-align:left; }
+th,td { padding:12px 10px; border-bottom:1px solid #e0e6ee; vertical-align:top; } th { background:#f3f6f9; white-space:nowrap; }
+button,input,select { font:inherit; padding:8px 10px; border:1px solid #bdc8d5; border-radius:3px; } button { cursor:pointer; background:#f5f8fb; margin:2px; } button:disabled { cursor:wait; opacity:.5; }
+input,select { background:white; color:#27364b; } a { color:#245d91; }
+label { display:flex; flex-direction:column; gap:4px; margin-bottom:12px; }
+.metrics { display:flex; flex-wrap:wrap; gap:36px; } .metrics strong { display:block; font-size:24px; }
+.error { color:#a52a2a; padding:10px; background:#fff0f0; } .success { color:#24654a; }
+small,footer { color:#64758c; } footer { padding:20px 28px; border-top:1px solid #dce3ea; }
+dialog { width:min(800px,95vw); max-height:90vh; overflow:auto; border:1px solid #aebaca; padding:24px; }
+dialog::backdrop { background:#0005; } .po-line { display:flex; flex-wrap:wrap; gap:10px; border:1px solid #dce3ea; padding:10px; margin:10px 0; } .po-line input { width:140px; } .po-line select { max-width:300px; }
+@media(max-width:700px) { .layout { display:block; } nav { width:auto; display:flex; flex-wrap:wrap; gap:6px; } nav button,nav a { width:auto; margin:0; } main { padding:12px; } header { padding:16px; } section { padding:12px; } }

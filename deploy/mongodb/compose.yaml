@@ -1,0 +1,36 @@
+services:
+  mongodb:
+    image: mongo:9.0.4
+    container_name: erp-agent-mongodb
+    restart: always
+    ports:
+      - "192.168.100.135:27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME:?}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:?}
+      MONGO_INITDB_DATABASE: erp_agent
+      ERP_MONGO_PASSWORD: ${MONGO_APP_PASSWORD:?}
+    volumes:
+      - mongodb-data:/data/db
+      - mongodb-config:/data/configdb
+      - ./init-user.js:/docker-entrypoint-initdb.d/10-init-user.js:ro
+    command: ["mongod", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.25"]
+    cpus: 1.0
+    mem_limit: 1g
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "quit(db.adminCommand({ping: 1}).ok === 1 ? 0 : 1)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  mongodb-data:
+    name: erp-agent-mongodb-data
+  mongodb-config:
+    name: erp-agent-mongodb-config
