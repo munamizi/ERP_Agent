@@ -19,5 +19,11 @@ def request_order_info(question: str, missing_fields: list[str]) -> dict:
     Returns:
         用户恢复会话时提供的内容；恢复前通过 LangGraph 中断暂停。
     """
-    reply = interrupt({"kind": "order_info", "question": question, "missing_fields": missing_fields})
+    reply = interrupt(
+        {
+            "kind": "order_info",
+            "question": question,
+            "missing_fields": missing_fields
+        }
+    )
     return reply if isinstance(reply, dict) else {"reply": reply}
